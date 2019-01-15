@@ -17,7 +17,48 @@
 // var goldenUl = document.getElementById('gg');
 // var edmondsUl = document.getElementById('edmondsbeach');
 
+// var alki = {
+//   name: 'Alki' ,
+//   neighborhood: 'West Seattle',
+//   seagullCont.createElement('li');
+//       liEl.textContent = `${days[i]}: ${this.seagullCount[i]} seagulls`;
+//       alkiUl.appendChild(liEl);
+//     }
+//   }unt: [212, 44, 34, 11, 18, 88, 377],
+//   render: function(){
+//     for (var i = 0 ; i < days.length ; i ++ ){
+//       var liEl = docume
+// };
 
+// var goldenGardens = {
+//   name: 'Golden Gardens' ,
+//   neighborhood: 'Ballard',
+//   seagullCount: [45, 233, 256, 122, 76, 45, 22],
+//   render: function(){
+//     for (var i = 0 ; i < days.length ; i ++ ){
+//       var goldenEl = document.createElement('li');
+//       goldenEl.textContent = `${days[i]}: ${this.seagullCount[i]} seagulls`;
+//       goldenUl.appendChild(goldenEl);
+//     }
+//   }
+// };
+
+// var edmonds = {
+//   name: 'Edmonds Beach' ,
+//   neighborhood: 'Edmonds',
+//   seagullCount: [88, 687, 89, 24, 56, 22, 65],
+//   render: function(){
+//     for (var i = 0 ; i < days.length ; i ++ ){
+//       var edmondsEl = document.createElement('li');
+//       edmondsEl.textContent = `${days[i]}: ${this.seagullCount[i]} seagulls`;
+//       edmondsUl.appendChild(edmondsEl);
+//     }
+//   }
+// };
+
+// alki.render();
+// edmonds.render();
+// goldenGardens.render();
 var results = [];
 //math function
 function getRandomInt(min , max){ //take in min and max property
