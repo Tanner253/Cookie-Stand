@@ -21,7 +21,7 @@
 //   name: 'Alki' ,
 //   neighborhood: 'West Seattle',
 //   seagullCont.createElement('li');
-      // liEl.textContent = `${days[i]}: ${this.seagullCount[i]} seagulls`;
+//       liEl.textContent = `${days[i]}: ${this.seagullCount[i]} seagulls`;
 //       alkiUl.appendChild(liEl);
 //     }
 //   }unt: [212, 44, 34, 11, 18, 88, 377],
@@ -59,9 +59,10 @@
 // alki.render();
 // edmonds.render();
 // goldenGardens.render();
-function getRandomInt(min , max){
-
-  return Math.floor(Math.random() * (max - min)) + min;
+var results = [];
+//math function
+function getRandomInt(min , max){ //take in min and max property
+  return Math.floor(Math.random() * (max - min)) + min; //does math
 
 }
 
@@ -90,10 +91,11 @@ var Pike = {
     for ( i = 0 ; i < time.length ; i++){
       // eslint-disable-next-line no-inner-declarations
       var PikeEl = document.createElement('li');
-      var amountOfCustomers = getRandomInt(this.minimumCustomers, this.maximumCustomers);
-      var amountOfCookies = amountOfCustomers * this.avgCookieSale;
-      amountOfCookies=Math.floor(amountOfCookies);
+      var amountOfCustomers = getRandomInt(this.minimumCustomers, this.maximumCustomers); //pass in two parameters for math function
+      var amountOfCookies = amountOfCustomers * this.avgCookieSale; //multiply avg cookies by number given by math function
+      amountOfCookies=Math.floor(amountOfCookies); //round math output
       console.log('amount of cookies', amountOfCookies);
+      results.push(amountOfCookies); //put output in array
 
       PikeEl.textContent = `${time[i]}: ${amountOfCookies} cookies`;
       PikeUl.appendChild(PikeEl);
@@ -107,25 +109,27 @@ var Pike = {
 
 
 
-
+//create object
 var SeaTac = {
+  //object properties
   Location: '1st and Pike',
-  minimumCustomers:3 , 
+  minimumCustomers:3 ,
   maximumCustomers: 24,
   avgCookieSale: 1.2,
   render: function(){
-    for ( i = 0 ; i < time.length ; i++){
+    for ( i = 0 ; i < time.length ; i++){ //loop for how many values are in array
       // eslint-disable-next-line no-inner-declarations
-      var SeaTacEl = document.createElement('li');
-      var amountOfCustomers = getRandomInt(this.minimumCustomers, this.maximumCustomers);
-      var amountOfCookies = amountOfCustomers * this.avgCookieSale;
-      amountOfCookies=Math.floor(amountOfCookies);
-      SeaTacEl.textContent = `${time[i]}: ${amountOfCookies} cookies`;
-      SeaTacUl.appendChild(SeaTacEl);
+      var SeaTacEl = document.createElement('li'); //make list element
+      var amountOfCustomers = getRandomInt(this.minimumCustomers, this.maximumCustomers); //get a customer number between max and min
+      var amountOfCookies = amountOfCustomers * this.avgCookieSale; //multiply how many customers * avg amount of cookies
+      amountOfCookies=Math.floor(amountOfCookies); //round result to nearest whole intiger
+      results.push(amountOfCookies); //push result to results array
+      SeaTacEl.textContent = `${time[i]}: ${amountOfCookies} cookies`; // assign this text to the new li element
+      SeaTacUl.appendChild(SeaTacEl); //assign li element to unordered list
     }
   }
 };
-
+//call object
 
 
 
@@ -143,6 +147,7 @@ var SeattleCenter = {
       var amountOfCustomers = getRandomInt(this.minimumCustomers, this.maximumCustomers);
       var amountOfCookies = amountOfCustomers * this.avgCookieSale;
       amountOfCookies=Math.floor(amountOfCookies);
+      results.push(amountOfCookies);
       SeattleCenterEl.textContent = `${time[i]}: ${amountOfCookies} cookies`;
       SeattleCenterUl.appendChild(SeattleCenterEl);
     }
@@ -167,6 +172,7 @@ var CapitolHill = {
       var amountOfCustomers = getRandomInt(this.minimumCustomers, this.maximumCustomers);
       var amountOfCookies = amountOfCustomers * this.avgCookieSale;
       amountOfCookies=Math.floor(amountOfCookies);
+      results.push(amountOfCookies);
       CapitolHillEl.textContent = `${time[i]}: ${amountOfCookies} cookies`;
       CapitolHillUl.appendChild(CapitolHillEl);
     }
@@ -190,6 +196,7 @@ var Alki = {
       var amountOfCustomers = getRandomInt(this.minimumCustomers, this.maximumCustomers);
       var amountOfCookies = amountOfCustomers * this.avgCookieSale;
       amountOfCookies=Math.floor(amountOfCookies);
+      results.push(amountOfCookies);
       alkiEl.textContent = `${time[i]}: ${amountOfCookies} cookies`;
       AlkiUl.appendChild(alkiEl);
     }
@@ -201,3 +208,17 @@ SeaTac.render();
 SeattleCenter.render();
 CapitolHill.render();
 Alki.render();
+
+
+var ResultsUl = document.getElementById('Array');
+
+function Results(){
+  for(i=0 ; i < results.length ; i++){
+    var resultsEl = document.createElement('li');
+    resultsEl.textContent = `${results[i]}`;
+    ResultsUl.appendChild(resultsEl);
+    console.log(resultsEl);
+
+  }
+}
+Results(); //call function to store resilt in a variable.
