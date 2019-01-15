@@ -109,26 +109,27 @@ var Pike = {
 
 
 
-
+//create object
 var SeaTac = {
+  //object properties
   Location: '1st and Pike',
   minimumCustomers:3 ,
   maximumCustomers: 24,
   avgCookieSale: 1.2,
   render: function(){
-    for ( i = 0 ; i < time.length ; i++){
+    for ( i = 0 ; i < time.length ; i++){ //loop for how many values are in array
       // eslint-disable-next-line no-inner-declarations
-      var SeaTacEl = document.createElement('li');
-      var amountOfCustomers = getRandomInt(this.minimumCustomers, this.maximumCustomers);
-      var amountOfCookies = amountOfCustomers * this.avgCookieSale;
-      amountOfCookies=Math.floor(amountOfCookies);
-      results.push(amountOfCookies);
-      SeaTacEl.textContent = `${time[i]}: ${amountOfCookies} cookies`;
-      SeaTacUl.appendChild(SeaTacEl);
+      var SeaTacEl = document.createElement('li'); //make list element
+      var amountOfCustomers = getRandomInt(this.minimumCustomers, this.maximumCustomers); //get a customer number between max and min
+      var amountOfCookies = amountOfCustomers * this.avgCookieSale; //multiply how many customers * avg amount of cookies
+      amountOfCookies=Math.floor(amountOfCookies); //round result to nearest whole intiger
+      results.push(amountOfCookies); //push result to results array
+      SeaTacEl.textContent = `${time[i]}: ${amountOfCookies} cookies`; // assign this text to the new li element
+      SeaTacUl.appendChild(SeaTacEl); //assign li element to unordered list
     }
   }
 };
-
+//call object
 
 
 
@@ -220,4 +221,4 @@ function Results(){
 
   }
 }
-Results();
+Results(); //call function to store resilt in a variable.
