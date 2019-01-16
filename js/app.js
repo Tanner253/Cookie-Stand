@@ -5,14 +5,20 @@ var storeData = [];
 var time = ['6 am','7 am','8 am', '9 am', '10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm','8 pm', ];
 var Table = document.getElementById('cookie-Table');
 
+Store.prototype.numbers = function(){ //get random intiger and store it in prototype:"numbers"
+  for(var i = 0 ; i < time.length; i++){ //loop iteration for each our
+    this.customersPerHr.push(Math.floor(Math.random() * (this.max - this.min)) + this.min); //'this' keyword, followed by assigned variable (A1) then push to array in variable 'customers per hour' (random number)
+    }
+}
+
 //create constructor function
 function Store(location, min, max, avgCookie){
   this.location = location;
   this.min = min
   this.max = max
   this.avgCookie = avgCookie
-  this.customersPerHr = [] ;
-  this.cookiesSoldPerHr = [] ;
+  this.customersPerHr = [] ; //A1
+  this.cookiesSoldPerHr = [] ; //THESE LINES
   this.total = 0
   storeData.push(this)
 }
@@ -24,15 +30,11 @@ new Store('Seattle Center', 11, 38, 3.7)
 new Store('Capitol Hill', 20, 38, 2.3)
 new Store('Alki', 2, 16, 4.6)
 //console.table(storeResults) -worked
-Store.prototype.numbers = function(){
-  for(var i = 0 ; i < time.length; i++){
-    this.customersPerHr.push(Math.floor(Math.random() * (this.max - this.min)) + this.min);
-    }
-}
 
 Store.prototype.cookiesSoldHr = function(){
   for(var i = 0; i < time.length ; i++ ){
       this.cookiesSoldPerHr.push(Math.floor((this.avgCookie * this.customersPerHr[i])))
+      //THESE LINES
 
 
   }
