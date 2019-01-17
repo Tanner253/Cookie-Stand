@@ -11,17 +11,33 @@
 <body>
   <h1 id = 'title'>A data representation of total SalmonCookies sold at the following markets:</h1>
   <table id = "cookie-Table">
-  </table>
-  <ol id = 'rankingOl'>
-    <li>Ranking:</li>
-     
-    <li>1st and pike</li>
-    <li>Seattle Center</li>
-    <li>Alki</li>
-    <li>Capitol Hill</li>
-    <li>SeaTac</li>
-    </ol>
     <img id='salmon' src = 'img/salmon-cookies.png'>
+  </table>
+  <form id="sales-form">
+    <fieldset>
+      <legend>Store Submissions form:</legend>
+          <!-- ADDED "TYPE="REQUIRED"" -->
+      <label for="location">Location: </label>
+      <input name="location" type="text" required="required"  />
+
+      <label for="minimum">Min Cust: </label>
+      <input name="min" type="number" required="required"  />
+
+      <label for="Maximum">Max Cust: </label>
+      <input name="max" type="number" required="required"  />
+
+      <label for="Avg">Avg: </label>
+      <input name="avgCookie" type="number" type="required"  />
+
+
+      <button type="submit">Create new comment!</button>
+    </fieldset>
+  </form>
+
+
+  <ul id="chat-list"></ul>
+
+    
   <script src="js/app.js"></script>
 </body>
 

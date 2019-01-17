@@ -37,8 +37,9 @@ h1{
 ol{
     font-size: 40px;
     text-align: center;
+    list-style: decimal;
     
 }
 #salmon{
-    margin: 0px 0px 0px 160px;
+    margin: 0px 0px 0px 250px;
 }
