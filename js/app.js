@@ -24,7 +24,7 @@ function Store(location, min, max, avgCookie){
 }
 
 //create instances with variables to pass through constructor perameters
-new Store("1st and Pike",23, 65, 6.3);
+new Store('1st and Pike',23, 65, 6.3);
 new Store('SeaTac', 3, 24, 1.2);
 new Store('Seattle Center', 11, 38, 3.7);
 new Store('Capitol Hill', 20, 38, 2.3);
@@ -36,7 +36,6 @@ var salesForm = document.getElementById('sales-form');
 
 //create function that accepts input values of form
 function handleSalesForm(event){
-  
   event.preventDefault();
   var location = event.target.location.value;
   var min = parseInt(event.target.min.value);
@@ -46,7 +45,6 @@ function handleSalesForm(event){
   new Store(location, min, max, avgCookie);
   //renders this but not correctly, renders all stores again and adds them.
   renderAllStores();
-  
 }
 //when submit is hit run handle
 salesForm.addEventListener('submit', handleSalesForm);
@@ -74,14 +72,14 @@ Store.prototype.render = function(){
   trEl.appendChild(tdEl);
   //create loop and repeat 15 times and once for each iteration of cookies sold per hour
   for(var i = 0 ; i < time.length; i++){
-    var tdEl = document.createElement('td');
+    tdEl = document.createElement('td');
     tdEl.textContent = this.cookiesSoldPerHr[i]; //only loop the cookies sold per hour[i]
-    trEl.appendChild(tdEl); 
+    trEl.appendChild(tdEl);
   }
   tdEl = document.createElement('td');
   this.sumOfValues();
   tdEl.textContent = this.total;
-  trEl.appendChild(tdEl); 
+  trEl.appendChild(tdEl);
   Table.appendChild(trEl);
 };
 
@@ -137,7 +135,7 @@ function autoMakeFooter(){
 }
 
 
-function renderAllStores(){ //takes all data stored and displays them on the table 
+function renderAllStores(){ //takes all data stored and displays them on the table
   for(var i = 0; i < storeData.length ; i++ ){
     storeData[i].render();
   }
