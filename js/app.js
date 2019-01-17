@@ -5,9 +5,10 @@ var storeData = [];
 var time = ['6 am','7 am','8 am', '9 am', '10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm','8 pm', ];
 var Table = document.getElementById('cookie-Table');
 
-Store.prototype.numbers = function(){ //get random intiger and store it in prototype:"numbers"
+Store.prototype.calcTotals = function(){ //get random intiger and store it in prototype:"numbers"
   for(var i = 0 ; i < time.length; i++){ //loop iteration for each our
-    this.customersPerHr.push(Math.ceil(Math.random() * (this.max - this.min)) + this.min); //'this' keyword, followed by assigned variable (A1) then push to array in variable 'customers per hour' (random number)
+    var randomCustomers = Math.ceil(Math.random() * (this.max - this.min)) + this.min ;//'this' keyword, followed by assigned variable (A1) then push to array in variable 'customers per hour' (random number)
+    this.cookiesSoldPerHr.push(Math.floor((this.avgCookie * randomCustomers)));
   }
 };
 
@@ -17,7 +18,6 @@ function Store(location, min, max, avgCookie){
   this.min = min;
   this.max = max;
   this.avgCookie = avgCookie;
-  this.customersPerHr = [] ; //A1
   this.cookiesSoldPerHr = [] ; //THESE LINES
   this.total = 0;
   storeData.push(this);
@@ -42,26 +42,21 @@ function handleSalesForm(event){
   var max = parseInt(event.target.max.value);
   var avgCookie = parseInt(event.target.avgCookie.value);
   //assign to store variable
-  new Store(location, min, max, avgCookie);
+  var newStore = new Store(location, min, max, avgCookie);
+  newStore.calcTotals();
+  // storeData[storeData.length -1].calcTotals();
+
+
   //renders this but not correctly, renders all stores again and adds them.
-  renderAllStores();
+  renderTable();
 }
 //when submit is hit run handle
 salesForm.addEventListener('submit', handleSalesForm);
 
 //take random nymber and multiply by the avg cookie
-Store.prototype.cookiesSoldHr = function(){
-  for(var i = 0; i < time.length ; i++ ){
-    //assign result into cookies sold per hour
-    this.cookiesSoldPerHr.push(Math.floor((this.avgCookie * this.customersPerHr[i])));
-    //THESE LINES
-  }
-
-};
 //for as long as the data array has iterations, run the numbers andn cookies sold per hour prototypes on the data array
 for(var i = 0; i < storeData.length; i++){
-  storeData[i].numbers();
-  storeData[i].cookiesSoldHr();
+  storeData[i].calcTotals();
 }
 //displays table
 Store.prototype.render = function(){
@@ -84,6 +79,7 @@ Store.prototype.render = function(){
 };
 
 Store.prototype.sumOfValues = function (){
+  this.total = 0;
   for(var i = 0; i < time.length ; i++){
     //takes all values in array and adds them to itself, getting sum then assigning that to total
     this.total += this.cookiesSoldPerHr[i];
@@ -142,8 +138,11 @@ function renderAllStores(){ //takes all data stored and displays them on the tab
 }
 
 //footer total
+function renderTable(){
+  Table.innerHTML = '';
+  autoMakeHeader(); //makes header row
+  renderAllStores(); //calls render constructor function
+  autoMakeFooter();
+}
 
-
-autoMakeHeader(); //makes header row
-renderAllStores(); //calls render constructor function
-autoMakeFooter();
+renderTable();
