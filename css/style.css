@@ -41,6 +41,7 @@ header{
   width:90%;
   font-size:30px;
   margin:auto;
+  margin-top:100px;
   background-color:lightblue;
 }
 
@@ -69,15 +70,17 @@ header{
   color: white;
 }
 body{
-  background:rgb(141, 138, 138);
+  background:rgb(115, 187, 79);
 }
 #introduction{
-  margin:auto;
+  margin-top:50px;
+  margin-left:auto;
+  margin-right:auto;
   text-align: center;
   width: 90%;
   background-image: url(../img/family.jpg);
   font-size: 60px;
-  color: rgb(131, 130, 130);
+  color: rgb(96, 90, 151);
 }
 form{
   font-size:20px;
@@ -104,4 +107,19 @@ button{
   width: 80%;
   background-color:darkcyan;
   
+}
+#sectionOne{
+  background-color: navy;
+  color: white;
+  display: inline-flex;
+  font-size: 25px;
+  margin:auto;
+  margin-bottom:40px;
+}
+#sectionTwo{
+  font-size: 40px;
+  background-color: red;
+  color: navy;
+  display:inline-flex;
+  margin:auto;
 }
