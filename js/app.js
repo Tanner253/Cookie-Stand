@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 'use strict';
 var storeData = [];
+var salesForm = document.getElementById('sales-form');
+
 
 var time = ['6 am','7 am','8 am', '9 am', '10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm','8 pm', ];
 var Table = document.getElementById('cookie-Table');
@@ -24,15 +26,11 @@ function Store(location, min, max, avgCookie){
 }
 
 //create instances with variables to pass through constructor perameters
-new Store('1st and Pike',23, 65, 6.3);
-new Store('SeaTac', 3, 24, 1.2);
-new Store('Seattle Center', 11, 38, 3.7);
-new Store('Capitol Hill', 20, 38, 2.3);
-new Store('Alki', 2, 16, 4.6);
+
 
 //create var holding form
 
-var salesForm = document.getElementById('sales-form');
+
 
 //create function that accepts input values of form
 function handleSalesForm(event){
@@ -51,12 +49,14 @@ function handleSalesForm(event){
   renderTable();
 }
 //when submit is hit run handle
-salesForm.addEventListener('submit', handleSalesForm);
+
 
 //take random nymber and multiply by the avg cookie
 //for as long as the data array has iterations, run the numbers andn cookies sold per hour prototypes on the data array
-for(var i = 0; i < storeData.length; i++){
-  storeData[i].calcTotals();
+function totalsAcross(){
+  for(var i = 0; i < storeData.length; i++){
+    storeData[i].calcTotals();
+  }
 }
 //displays table
 Store.prototype.render = function(){
@@ -144,5 +144,11 @@ function renderTable(){
   renderAllStores(); //calls render constructor function
   autoMakeFooter();
 }
-
+new Store('1st and Pike',23, 65, 6.3);
+new Store('SeaTac', 3, 24, 1.2);
+new Store('Seattle Center', 11, 38, 3.7);
+new Store('Capitol Hill', 20, 38, 2.3);
+new Store('Alki', 2, 16, 4.6);
+totalsAcross();
+salesForm.addEventListener('submit', handleSalesForm);
 renderTable();

@@ -3,12 +3,30 @@
     font-family: 'Baloo', cursive;
   }
   
+  header{
+    width: 100%;
+    color:white;
+    font-size: 25px;
+    background-image: url(../img/family.jpg);
+    }
+    
+  #headerH1{
+    float:left;
+    width: 450px;
+    height: 70px;
+    background: black;
+    display: auto;
+    font-size: 45px;
+    color: red;
+  } 
   body {
     background: #ccc;
   }
   
   table {
+    width:100%;
     border: 10px solid black;
+    background-image: url(../img/frosted-cookie.jpg);
   }
   
   td {
@@ -16,6 +34,7 @@
     border-radius: 15px;
     border: 1px solid black;
     background: white;
+    
   }
   
   th {
@@ -28,18 +47,26 @@
       margin: auto;
   }
 
-h1{
-    background: black;
-    display: auto;
-    font-size: 45px;
-    color: white;
-} 
-ol{
-    font-size: 40px;
-    text-align: center;
-    list-style: decimal;
-    
-}
 #salmon{
-    margin: 0px 0px 0px 250px;
+  width: 100%;
+}
+ul{
+  display: inline;
+  list-style: none;
+  
+}
+li{
+  color:Red;
+  list-style: none;
+  display: inline-block;
+  padding: 100px;
+}
+ #pug{
+  float:left;
+  width: 10%;
+}
+h2{
+  background: black;
+  color:white;
+  font-size: 45px;
 }
