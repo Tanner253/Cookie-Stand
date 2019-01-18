@@ -10,27 +10,21 @@
 <header> 
   <img id = 'pug' src = 'img/giphy - Copy.gif' alt = 'Home' title = 'Home' href = "index.html" >
   <h1 id= 'headerH1'> Sam's Cookies - HQ </h1>
- <li>
-   <a href = "#">nav1</a>
-  </li>
-  <li>
-    <a href = "#">nav2</a>
-  </li>
-  <li>
-    <a href = "#">nav3</a>
-  </li>
-  <li>
-    <a href = "#">nav4 </a>
-  </li>
+  <div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
 </header>
 
 <body>
-
+  <p id = 'introduction'>As you can see in the data table below, the Pike ST market location is hot! Leading in numbers every day! Every hour! Here's how we do it!</p>
   <h2 id = 'title'>A data representation of total SalmonCookies sold at the following markets:</h2>
-  <table id = "cookie-Table">
-    <img id='salmon' src = 'img/salmon-cookies.png' alt ='Home'>
+  <img id='salmon' src = 'img/salmon-cookies.png' alt ='Salmon' title = 'This is a Salmon'>
   </table>
-
+<main>
+  <table id = 'cookieTable'></table>
   <form id="sales-form">
     <fieldset>
       <legend>Store Submissions form:</legend>
@@ -45,8 +39,17 @@
       <button type="submit">Create new comment!</button>
     </fieldset>
   </form>
-  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui officia sapiente incidunt sunt adipisci necessitatibus impedit accusamus cupiditate facilis nemo, nisi laborum nam voluptas, eos ducimus eum blanditiis. Ab iusto quis impedit necessitatibus distinctio placeat, hic itaque quasi repellat at ea, doloribus optio nisi blanditiis aliquam, quaerat fugit dolor consectetur nam maxime voluptates. Quia inventore culpa,<img id='frostedcookie' src = '/img/frosted-cookie.jpg' width = 10%> nam tempore eos praesentium omnis, rerum magni fugiat aspernatur quis. Tenetur explicabo ex culpa, molestiae saepe sequi dolor possimus ipsam, eaque debitis nobis ad quae asperiores ab aperiam earum maxime omnis? Nisi consequatur temporibus maiores voluptate dignissimos nostrum quasi et quaerat necessitatibus quod voluptatum, veniam error nemo quam ipsum libero eveniet? Aliquid esse nam rerum laborum magnam, quidem incidunt obcaecati illum voluptatem aliquam reiciendis!</p>
+</main>
 
+  <section>
+    <img src = 'img/chinook.jpg' alt = 'Chinook salmon' title ='The Finest Chinook Salmon'>
+    <p>First the finest fisherman around the block go out in the row boat and float down stream, then the fisherman use a technique that i'm not at liberty to tell you. The fisherman bring back the fish, from wherever they got it, and it is processed. <img src ='fish' alt = 'These are fish' title = 'These are fish!'> </p>
+  </section>
+  <section id = ''> 
+ 
+  <p>At Sam's Salmon Cookies Inc. we take pride in our product. As you can see, we use the finest state of the art appliances to deliver the best product, with the best quality! <img id = 'cookieCutter' src = 'img/cutter.jpeg'></p>
+  
+  </section>
     
   <script src="js/app.js"></script>
 </body>
