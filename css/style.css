@@ -118,8 +118,26 @@ button{
 }
 #sectionTwo{
   font-size: 40px;
-  background-color: red;
+  background-color: #666;
   color: navy;
   display:inline-flex;
   margin:auto;
+  margin-bottom:100px;
+}
+#sectionTwo img{
+  float:left;
+}
+#placeholder{
+  width: 20%;
+}
+#sectionThree{
+  
+  color:white;
+  background: #666;
+  align-content: center;
+  margin : auto;
+  font-size: 45px;
+}
+#sectionThree img{
+  float: left;
 }

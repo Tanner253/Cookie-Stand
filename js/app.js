@@ -47,10 +47,19 @@ function handleSalesForm(event){
 
   //renders this but not correctly, renders all stores again and adds them.
   renderTable();
-}
+
 //when submit is hit run handle
+// if(!event.target.location.value || !event.target.min.value || !event.target.max.value || !event.target.avgCookie.value){
+//   return alert("Please fill in the fields below:")
+// }
 
-
+// if(isNaN(location) || isNaN(min) || isNaN(max) || isNaN(avgCookie)){
+//   return alert('Please us positive numbers')
+// }
+// if (min > max || max < min || location.length < 2 || avgCookie < 1){
+//   return alert('Please enter logical and valid inputs)
+// }
+}
 //take random nymber and multiply by the avg cookie
 //for as long as the data array has iterations, run the numbers andn cookies sold per hour prototypes on the data array
 function totalsAcross(){
