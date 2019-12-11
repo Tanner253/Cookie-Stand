@@ -42,7 +42,7 @@ header{
   font-size:30px;
   margin:auto;
   margin-top:100px;
-  background-color:lightblue;
+  background-color:black;
 }
 
 .topnav {
@@ -70,7 +70,7 @@ header{
   color: white;
 }
 body{
-  background:rgb(115, 187, 79);
+  background: #888888;;
 }
 #introduction{
   margin-top:50px;
@@ -80,7 +80,8 @@ body{
   width: 90%;
   background-image: url(../img/family.jpg);
   font-size: 60px;
-  color: rgb(96, 90, 151);
+  color: white;
+  text-shadow: 3px 3px black;
 }
 form{
   font-size:20px;
@@ -109,17 +110,17 @@ button{
   
 }
 #sectionOne{
-  background-color: navy;
+  background-color:black;
   color: white;
   display: inline-flex;
-  font-size: 25px;
+  font-size: 40px;
   margin:auto;
   margin-bottom:40px;
 }
 #sectionTwo{
   font-size: 40px;
-  background-color: #666;
-  color: navy;
+  background-color: black;
+  color: white;
   display:inline-flex;
   margin:auto;
   margin-bottom:100px;
@@ -133,7 +134,7 @@ button{
 #sectionThree{
   
   color:white;
-  background: #666;
+  background: black;
   align-content: center;
   margin : auto;
   font-size: 45px;
